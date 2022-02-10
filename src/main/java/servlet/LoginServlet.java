@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginResult.jsp");
 			dispatcher.forward(request, response);
 		}else {
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect("/timecard-app");
 		}
 	}
 
