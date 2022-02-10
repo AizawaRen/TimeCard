@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>出退勤システム</h1>
-<p>こんにちは</p>
+<p><%= emp.getName() %>さんこんにちは</p>
 <input type="button" value="出勤">
 <input type="button" value="退勤">
 </body>
