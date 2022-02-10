@@ -9,7 +9,7 @@
 <body>
 
 <h2>ログイン</h2>
-<form action="/timecard-app/LoginServlet" method="post">
+<form action="/LoginServlet" method="post">
 	社員番号：<input type="text" name="number"><br>
 	パスワード：<input type="password" name="pass"><br>
 	<input type="submit" value="ログイン">
