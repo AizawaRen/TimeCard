@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>社員番号、もしくはパスワードが間違っています</p>
-
+<a href="/timecard-app/LoginServlet">ログイン画面へ</a>
 </body>
 </html>
