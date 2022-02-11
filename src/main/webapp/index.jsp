@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles.css">
 <meta charset='UTF-8'>
 <title>TimeCard-app</title>
 </head>
