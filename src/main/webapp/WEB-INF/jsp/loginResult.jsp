@@ -15,5 +15,8 @@
 <p><%= emp.getName() %>さんこんにちは</p>
 <input type="button" value="出勤">
 <input type="button" value="退勤">
+<div>
+<a href="/timecard-app/LoginServlet">ログアウト</a>
+</div>
 </body>
 </html>
