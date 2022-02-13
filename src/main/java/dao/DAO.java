@@ -11,7 +11,7 @@ import model.LoginInfo;
 
 public class DAO {
 	
-	private final String JDBC_URL = "postgres://bqpygyzdwvkzvj:3fef9018117dca59473bac1c390b79236216cfa57b89d50aeadb3f80a05d51d1@ec2-52-73-149-159.compute-1.amazonaws.com:5432/de3sgrkr4243o0";
+	private final String JDBC_URL = "jdbc:postgresql://bqpygyzdwvkzvj:3fef9018117dca59473bac1c390b79236216cfa57b89d50aeadb3f80a05d51d1@ec2-52-73-149-159.compute-1.amazonaws.com:5432/de3sgrkr4243o0";
 	private final String DB_USER = "bqpygyzdwvkzvj";
 	private final String DB_PASS = "3fef9018117dca59473bac1c390b79236216cfa57b89d50aeadb3f80a05d51d1";
 	
