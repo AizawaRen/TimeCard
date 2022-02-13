@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.DAO;
+import dao.LoginDAO;
 import model.Employee;
 import model.LoginInfo;
 import model.LoginLogic;
@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isLogin) {
 			HttpSession session = request.getSession();
-			DAO dao = new DAO();
+			LoginDAO dao = new LoginDAO();
 			Employee emp = dao.findByLogin(li);
 			session.setAttribute("employee", emp);
 		

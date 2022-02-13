@@ -1,10 +1,10 @@
 package model;
 
-import dao.DAO;
+import dao.LoginDAO;
 
 public class LoginLogic {
 	public boolean execute(LoginInfo li) {
-		DAO dao = new DAO();
+		LoginDAO dao = new LoginDAO();
 		Employee emp = dao.findByLogin(li);
 		if(emp != null) {
 			return true;
