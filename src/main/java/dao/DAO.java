@@ -30,7 +30,7 @@ public class DAO {
 		try{
 			Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			
-			String sql = "SELECT * FROM employee WHERE enumber = ? AND pass = ?";
+			String sql = "SELECT * FROM employee WHERE enumber = ? AND pass = ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, li.getNumber());
 			pStmt.setString(2, li.getPass());
