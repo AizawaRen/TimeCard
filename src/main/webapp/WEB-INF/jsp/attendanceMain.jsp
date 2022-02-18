@@ -45,6 +45,7 @@
 	<input type="hidden" name="param" value="finish">
 	<input type="submit" value="退勤" disabled>
 </form>
+<h2>今日も1日おつかれさまでした！</h2>
 <%
 	}else{
 %>
@@ -52,7 +53,6 @@
 	<input type="hidden" name="param" value="finish">
 	<input type="submit" value="退勤">
 </form>
-<h2>今日も1日おつかれさまでした！</h2>
 <%
 	}
 %>
