@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 			Employee emp = dao.findByLogin(li);
 			session.setAttribute("employee", emp);
 		
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginResult.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
 			dispatcher.forward(request, response);
 		}else {
 //			response.sendRedirect("/timecard-app");
