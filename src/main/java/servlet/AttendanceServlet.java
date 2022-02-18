@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AttendanceDataDAO;
+import model.AttendanceData;
 import model.Employee;
 
 
@@ -25,18 +26,20 @@ public class AttendanceServlet extends HttpServlet {
 		Employee emp = (Employee) session.getAttribute("employee");
 		String enumber = emp.getNumber();
 		String param = request.getParameter("param");
-		AttendanceDataDAO ad = new AttendanceDataDAO();
+		AttendanceDataDAO add = new AttendanceDataDAO();
+		AttendanceData ad = new AttendanceData();
 		
 		boolean success = false;
 		
 		if (param.equals("start")) {
-			success = ad.setStart(enumber);
+			success = add.setStart(enumber);
 		} else if (param.equals("finish")) {
-			success = ad.setFinish(enumber);
+			success = add.setFinish(enumber);
 		} else if (param.equals("startBreak")) {
-			success = ad.setStartBreak(enumber);
+			success = add.setStartBreak(enumber);
 		} else if (param.equals("finishBreak")) {
-			success = ad.setFinishBreak(enumber);
+			success = add.setFinishBreak(enumber);
+			
 		}
 		
 		if(success) {

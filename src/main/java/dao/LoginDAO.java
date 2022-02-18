@@ -22,15 +22,8 @@ public class LoginDAO {
 	public Employee findByLogin(LoginInfo li){
 	
 		Employee emp = null;
-		/*
-		 * Connection conn = null;
-		 * 
-		 * try{ Class.forName("org.postgresql.Driver"); // } catch
-		 * (ClassNotFoundException e) { e.printStackTrace(); }
-		 */
 	
 		try{
-//			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			dbConnect();
 			String sql = "SELECT * FROM employee WHERE enumber = ? AND pass = ?;";
 			pStmt = conn.prepareStatement(sql);
