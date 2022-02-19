@@ -79,7 +79,7 @@
 		<% 
 			if(time != 0){ 
 		%>
-			<p>現時点の給料の目安：<%= String.format("%.0f", pay) %>円</p>
+			<p>おおよその今月の給料：<%= String.format("%.0f", pay) %>円</p>
 		<%
 			}
 		%>
