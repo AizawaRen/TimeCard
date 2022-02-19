@@ -2,4 +2,28 @@
 
 h2{
 	color: red;
+	text-align: center;
+	
+}
+
+p{
+	text-align: center;
+}
+
+div{
+	width: 300px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin:0 auto;
+}
+
+form{
+	text-align: center;
+}
+
+
+body{
+	background-color: lightblue;
 }

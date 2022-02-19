@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AttendanceDataDAO;
-import model.AttendanceData;
 import model.Employee;
 
 
@@ -27,9 +26,8 @@ public class AttendanceServlet extends HttpServlet {
 		String enumber = emp.getNumber();
 		String param = request.getParameter("param");
 		AttendanceDataDAO add = new AttendanceDataDAO();
-		AttendanceData ad = new AttendanceData();
 		
-		boolean success = false;
+		Boolean success = null;
 		
 		if (param.equals("start")) {
 			success = add.setStart(enumber);
@@ -43,8 +41,7 @@ public class AttendanceServlet extends HttpServlet {
 		}
 		
 		if(success) {
-			session.setAttribute(param, param);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/timecard-app/CheckAttServlet");
 			dispatcher.forward(request, response);
 		}else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceError.jsp");
