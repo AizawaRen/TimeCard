@@ -10,7 +10,7 @@
 	String finish = (String) session.getAttribute("finish");
 	String startBreak = (String) session.getAttribute("startBreak");
 	String finishBreak = (String) session.getAttribute("finishBreak");
-	Double time = (Double) session.getAttribute("time");
+	Double time = (Double) session.getAttribute("time") / 60;
 	Double pay = (Double) session.getAttribute("pay");
 	LocalDateTime now = LocalDateTime.now();
 	
@@ -71,7 +71,8 @@
 		<%
 			}else if(start != null && finish != null){
 		%>
-		<p><%= finish %>に退勤しました。今日も一日お疲れさまでした！</p>
+		<p><%= finish %>に退勤しました。</p>
+		<p>今日も一日お疲れさまでした！</p>
 		<%
 			}
 		%>
@@ -79,7 +80,8 @@
 		<% 
 			if(time != 0){ 
 		%>
-			<p>おおよその今月の給料：<%= String.format("%.0f", pay) %>円</p>
+			<p>今月の実働時間（目安）：<%= String.format("%.1f", time) %>時間</p>
+			<p>今月の給料（目安）：<%= String.format("%.0f", pay) %>円</p>
 		<%
 			}
 		%>

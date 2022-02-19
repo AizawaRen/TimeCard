@@ -41,8 +41,7 @@ public class AttendanceServlet extends HttpServlet {
 		}
 		
 		if(success) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/timecard-app/CheckAttServlet");
-			dispatcher.forward(request, response);
+			response.sendRedirect("/timecard-app/CheckAttServlet");
 		}else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceError.jsp");
 			dispatcher.forward(request, response);
