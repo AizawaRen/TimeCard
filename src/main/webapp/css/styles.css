@@ -11,12 +11,18 @@
     padding: 0;
 }
 
+span{
+	background: linear-gradient(transparent 60%, #ffff66 60%);
+}
+
 .box{
     margin: 2em 0;
     background: #f1f1f1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
     margin-bottom: 30px;
 	height:240px;
+	display:flex;
+	flex-flow: column;
 }
 .box .box-title{
     font-size: 1.2em;
@@ -31,8 +37,9 @@
 	height:300px;
 }
 .box.month p{
-	font-size:24px;
+	font-size:28px;
 }
+
 .break{
 	height:180px;
 }
@@ -59,18 +66,18 @@ h2{
 p{
 	text-align: center;
 }
-.box p{
-	margin: 27px;
-	padding:0;
+.box p,.box a{
+	margin:auto;
+	padding:auto;
+	justify-content:space-around;
+	font-size:20px;
 }
 
 
 .login{
 	margin-top:16px;	
 }
-.out{
-	margin:32px;
-}
+
 form{
 	text-align: center;
 	margin-bottom: 10px;

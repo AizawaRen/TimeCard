@@ -145,18 +145,16 @@
 			
 			
 			<div class="out">
-			<a href="/timecard-app/LogoutServlet">ログアウト</a>
+				<a href="/timecard-app/LogoutServlet">ログアウト</a>
 			</div>
 		</div>
 		
 		<div class="right">
 			<div class="box month">
 				<div class="box-title">Monthly report</div>
-					<p>実働：<%= String.format("%.0f", time) %>分</p>
-					<p>給与：<%= String.format("%.0f", pay) %>円</p>
-				<div>
-					<a href="/timecard-app/MonthlyDataServlet">出退勤記録を見る</a>
-				</div>
+				<p>実働：<%= String.format("%.0f", time) %>分</p>
+				<p>給与：<span><%= String.format("%.0f", pay) %></span>円</p><br>
+				<a href="/timecard-app/MonthlyDataServlet">出退勤記録を見る</a>
 			</div>
 			<div class="box break">
 				<div class="box-title">休憩時間について</div>
