@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>出退勤エラーが発生しました</p>
-<a href=""></a>
+<a href="/timecard-app/CheckAttServlet">出退勤メニューに戻る</a>
 </body>
 </html>
