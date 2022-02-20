@@ -42,8 +42,17 @@
 					<p><%= start %>に出勤しました</p>
 				<%
 					}
+					if(startBreak != null){
 				%>
+					<p><%= startBreak %>に休憩開始しました</p>
 				<%
+					}
+					if( finishBreak != null){
+				%>
+					<p><%= finishBreak %>に休憩終了しました</p>
+				
+				<%
+					}
 					if( finish != null){
 				%>
 					<p><%= finish %>に退勤しました</p>

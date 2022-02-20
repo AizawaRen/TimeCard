@@ -76,7 +76,7 @@ form{
 	margin-bottom: 10px;
 }
 
-.start,.finish,.startBreak,.finidhBreak{
+.start,.finish,.startBreak,.finishBreak{
 	cursor: pointer;
 	width: 200px;
 }
