@@ -23,6 +23,10 @@ public class AttendanceServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setCharacterEncoding("UTF-8");
 		Employee emp = (Employee) session.getAttribute("employee");
+		if(emp == null) {
+			response.sendRedirect("/timecard-app/LogoutServlet");
+		}
+		
 		String enumber = emp.getNumber();
 		String param = request.getParameter("param");
 		AttendanceDataDAO add = new AttendanceDataDAO();

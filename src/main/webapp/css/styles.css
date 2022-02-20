@@ -1,30 +1,82 @@
 @charset "UTF-8";
+.login-box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
+}
+.login-box h1 {
+    margin: 0; 
+    padding: 0;
+}
 
+.box{
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    margin-bottom: 30px;
+	height:240px;
+}
+.box .box-title{
+    font-size: 1.2em;
+    background: #ff7d6e;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.month{
+	height:300px;
+}
+.box.month p{
+	font-size:24px;
+}
+.break{
+	height:180px;
+}
+
+h1{
+	font-size:64px;
+	color:#ff0000;
+	text-align: center;
+	font-family:fantasy;
+	margin-top:20px
+}
 h2{
 	color: rgb(255, 128, 128);
 	text-align: center;
 	
 }
-
+#RealtimeClockArea{
+	font-size:64px;
+	margin:24px;
+}
+.date{
+	font-size:32px;
+}
 p{
 	text-align: center;
 }
+.box p{
+	margin: 27px;
+	padding:0;
+}
 
-/* div{
-	width: 300px;
-	height: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin:0 auto;
-} */
 
+.login{
+	margin-top:16px;	
+}
+.out{
+	margin:32px;
+}
 form{
 	text-align: center;
 	margin-bottom: 10px;
 }
 
-.start,.finish{
+.start,.finish,.startBreak,.finidhBreak{
 	cursor: pointer;
 	width: 200px;
 }
@@ -34,27 +86,24 @@ form{
 
 .at{
 	display: flex;
-	min-height: 100vh;
+	min-height: 90vh;
+	background-color:#ffebe9;
+	margin:0;
 }
 
-.emp,.month{
-	margin-bottom: 50px;
-}
+
 
 .left{
     flex: 1;
     text-align: center;
-    background-color: #888;
-    color: #fff;
+    
 }
 .right{
     flex: 1;
     text-align: center;
-    background-color: #888;
-    color: #fff;
+    
 }
 .main{
     flex: 2;
     text-align: center;
-    background-color: #eee;
 }

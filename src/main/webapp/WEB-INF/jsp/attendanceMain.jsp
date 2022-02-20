@@ -27,14 +27,14 @@
 	</head>
 	<body class="at">
 		<div class="left">
-			<div class="emp">
-				<h2>Employee's infomation</h2>
+			<div class="box">
+				<div class="box-title">Employee's infomation</div>
 				<p>従業員名：<%= emp.getName() %></p>
 				<p>従業員番号：<%= emp.getNumber() %></p>
 				<p>時給：<%= emp.getYph() %>円</p>
 			</div>
-			<div class="log">
-				<h2>Log</h2>
+			<div class="box">
+				<div class="box-title">Today's log</div>
 				
 				<%
 					if(start != null){
@@ -46,15 +46,15 @@
 				<%
 					if( finish != null){
 				%>
-					<p><%= finish %>に退勤しました。</p>
+					<p><%= finish %>に退勤しました</p>
 				<%
 					}
 				%>
 			</div>
 		</div>
 		<div class="main">
-			<h2>出退勤システム</h2>		
-			<p><%=now.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"))%></p>
+			<h1>Attendance</h1>		
+			<p class="date"><%=now.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"))%></p>
 			<p id="RealtimeClockArea"></p>
 			<%
 				if (start == null) {
@@ -72,6 +72,45 @@
 					<input type="submit" value="出勤" disabled class="disabled">
 				</form>
 			
+			<%
+				}
+			%>
+			<%
+
+				if (startBreak == null && finish == null && start != null) {
+			%>
+		
+			<form action="/timecard-app/AttendanceServlet" method="post">
+				<input type="hidden" name="param" value="startBreak">
+				<input type="submit" name="submit" value="休憩開始"class="startBreak">
+			</form>
+		
+			<%
+				} else {
+			%>
+		
+			<form>
+				<input type="submit" name="submit" value="休憩開始" disabled class="disabled">
+			</form>
+		
+			<%
+				}
+					if (finishBreak == null && finish == null && startBreak != null) {
+			%>
+		
+			<form action="/timecard-app/AttendanceServlet" method="post">
+				<input type="hidden" name="param" value="finishBreak">
+				<input	type="submit" name="submit" value="休憩終了" class="finishBreak">
+			</form>
+		
+			<%
+				} else {
+			%>
+		
+			<form>
+				<input	type="submit" name="submit" value="休憩終了" disabled class="disabled">
+			</form>
+		
 			<%
 				}
 			%>
@@ -96,22 +135,22 @@
 		
 			
 			
-			<div>
+			<div class="out">
 			<a href="/timecard-app/LogoutServlet">ログアウト</a>
 			</div>
 		</div>
 		
 		<div class="right">
-			<div class="month">
-			<h2>Monthly summary</h2>
-				<p>実働時間：<%= String.format("%.0f", time) %>分</p>
-				<p>給与（目安）：<%= String.format("%.0f", pay) %>円</p>
+			<div class="box month">
+				<div class="box-title">Monthly report</div>
+					<p>実働：<%= String.format("%.0f", time) %>分</p>
+					<p>給与：<%= String.format("%.0f", pay) %>円</p>
 				<div>
-					<a href="/timecard-app/MonthlyDataServlet">今月の出退勤記録を見る</a>
+					<a href="/timecard-app/MonthlyDataServlet">出退勤記録を見る</a>
 				</div>
 			</div>
-			<div>
-				<h2>休憩時間について</h2>
+			<div class="box break">
+				<div class="box-title">休憩時間について</div>
 				<p>実働6時間以上：45分</p>
 				<p>実働8時間以上：60分<p>
 			</div>

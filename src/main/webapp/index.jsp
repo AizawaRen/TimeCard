@@ -7,13 +7,15 @@
 <title>TimeCard-app</title>
 </head>
 <body>
-<h2>ログイン</h2>
-<div>
+<div class="login-box">
+<h1>Login</h1>
 
 <form action="/timecard-app/LoginServlet" method="post">
-	社員番号：<input type="text" name="number"><br>
-	パスワード：<input type="password" name="pass"><br>
-	<input type="submit" value="ログイン">
+	<label for="number">従業員番号</label>
+	<input type="text" name="number" id="number" class="login"><br>
+	<label for="pass">パスワード</label>
+	<input type="password" name="pass" id="pass" class="login"><br>
+	<input type="submit" value="ログイン" class="login">
 </form>
 
 </div>

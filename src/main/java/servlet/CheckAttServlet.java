@@ -18,6 +18,10 @@ public class CheckAttServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Employee emp = (Employee) session.getAttribute("employee");
+		if(emp == null) {
+			response.sendRedirect("/timecard-app/LogoutServlet");
+		}
+		
 		String enumber = emp.getNumber();
 		int yph = emp.getYph();
 		CheckAttDAO cad = new CheckAttDAO();
