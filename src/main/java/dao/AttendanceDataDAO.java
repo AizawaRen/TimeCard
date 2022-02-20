@@ -72,7 +72,7 @@ public class AttendanceDataDAO {
 			pStmt.setString(2, now.format(dFormat));
 			ResultSet rs = pStmt.executeQuery();
 			
-			if(!rs.next()) {
+			if(!rs.next() || rs.getString(4) != null) {
 				return false;
 			}else if(rs.getString(5) != null && rs.getString(6) == null) {
 				return false;
@@ -158,7 +158,7 @@ public class AttendanceDataDAO {
 			
 			if(!rs.next()) {
 				return false;
-			}else if(rs.getString(5) == null) {
+			}else if(rs.getString(5) == null || rs.getString(6) != null) {
 				return false;
 			} else {
 				sql = "UPDATE attendance SET finish_break = ? WHERE enumber = ? and  work_date = ?;";
