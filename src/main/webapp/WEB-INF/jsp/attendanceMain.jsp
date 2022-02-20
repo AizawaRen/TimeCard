@@ -14,8 +14,7 @@
 	String finishBreak = (String) session.getAttribute("finishBreak");
 	Double time = (Double) session.getAttribute("time") / 60;
 	Double pay = (Double) session.getAttribute("pay");
-	LocalDateTime now = LocalDateTime.now();
-	ZonedDateTime zonedJapan = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
+	ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 	
 %>
 <!DOCTYPE html>
@@ -28,7 +27,7 @@
 	</head>
 	<body>
 		<h2>出退勤システム</h2>		
-		<p><%=zonedJapan.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"))%></p>
+		<p><%=now.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"))%></p>
 		<p id="RealtimeClockArea"></p>
 		<%
 			if (start == null) {

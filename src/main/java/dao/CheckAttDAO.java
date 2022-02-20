@@ -5,8 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Duration;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import model.AttendanceData;
@@ -25,7 +26,8 @@ public class CheckAttDAO {
 	}
 	
 	public Double checkTotalTime(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		Double total = 0.0;
 		try{
 			dbConnect();		
@@ -81,7 +83,8 @@ public class CheckAttDAO {
 	}
 	
 	public String checkStart(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		try{
 			dbConnect();		
 			String sql = "SELECT * from attendance WHERE enumber = ? and work_date = ?";
@@ -112,7 +115,8 @@ public class CheckAttDAO {
 	}
 	
 	public String checkFinish(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		try{
 			dbConnect();		
 			String sql = "SELECT * from attendance WHERE enumber = ? and work_date = ?";
@@ -142,7 +146,8 @@ public class CheckAttDAO {
 		return null;
 	}
 	public String checkStartBreak(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		try{
 			dbConnect();		
 			String sql = "SELECT * from attendance WHERE enumber = ? and work_date = ?";
@@ -172,7 +177,8 @@ public class CheckAttDAO {
 		return null;
 	}
 	public String checkFinishBreak(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		try{
 			dbConnect();		
 			String sql = "SELECT * from attendance WHERE enumber = ? and work_date = ?";

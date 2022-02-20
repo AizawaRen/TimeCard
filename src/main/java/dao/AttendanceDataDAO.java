@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class AttendanceDataDAO {
@@ -20,7 +21,8 @@ public class AttendanceDataDAO {
 	}
 	
 	public Boolean setStart(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		
 		try{
 			dbConnect();		
@@ -59,7 +61,8 @@ public class AttendanceDataDAO {
 	}
 	
 	public Boolean setFinish(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		
 		try{
 			dbConnect();		
@@ -98,7 +101,8 @@ public class AttendanceDataDAO {
 	}
 	
 	public Boolean setStartBreak(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		
 		try{
 			dbConnect();		
@@ -137,7 +141,8 @@ public class AttendanceDataDAO {
 	}
 	
 	public Boolean setFinishBreak(String enumber) {
-		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime now = LocalDateTime.now();
+		ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
 		
 		try{
 			dbConnect();		
