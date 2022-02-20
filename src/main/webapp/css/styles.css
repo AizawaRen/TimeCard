@@ -32,7 +32,7 @@ form{
 	width: 200px;
 }
 
-body{
+.at{
 	display: flex;
 	min-height: 100vh;
 }

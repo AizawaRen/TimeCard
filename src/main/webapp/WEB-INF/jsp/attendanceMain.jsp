@@ -25,7 +25,7 @@
 		<script type="text/javascript" src="<%= request.getContextPath() %>/js/main.js"></script>
 		<title>出退勤システム</title>
 	</head>
-	<body>
+	<body class="at">
 		<div class="left">
 			<div class="emp">
 				<h2>Employee's infomation</h2>
