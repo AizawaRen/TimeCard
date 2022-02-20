@@ -31,7 +31,7 @@ public class AttendanceServlet extends HttpServlet {
 		String param = request.getParameter("param");
 		AttendanceDataDAO add = new AttendanceDataDAO();
 		
-		Boolean success = null;
+		Boolean success = false;
 		
 		if (param.equals("start")) {
 			success = add.setStart(enumber);
