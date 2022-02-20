@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .login-box {
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -6,11 +7,13 @@
     background: #ffebe9;
     border-top: solid 10px #ff7d6e;
 }
-.login-box h1 {
-    margin: 0; 
-    padding: 0;
-}
 
+.login{
+	margin-top:16px;	
+}
+.lb{
+	cursor:pointer;
+}
 span{
 	background: linear-gradient(transparent 60%, #ffff66 60%);
 }
@@ -74,9 +77,6 @@ p{
 }
 
 
-.login{
-	margin-top:16px;	
-}
 
 form{
 	text-align: center;

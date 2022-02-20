@@ -15,7 +15,7 @@
 	<input type="text" name="number" id="number" class="login"><br>
 	<label for="pass">パスワード</label>
 	<input type="password" name="pass" id="pass" class="login"><br>
-	<input type="submit" value="ログイン" class="login">
+	<input type="submit" value="ログイン" class="login lb">
 </form>
 
 </div>
