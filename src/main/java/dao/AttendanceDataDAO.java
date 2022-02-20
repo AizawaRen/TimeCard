@@ -74,6 +74,8 @@ public class AttendanceDataDAO {
 			
 			if(!rs.next()) {
 				return false;
+			}else if(rs.getString(5) != null && rs.getString(6) == null) {
+				return false;
 			} else {
 				sql = "UPDATE attendance SET finish = ? WHERE enumber = ? and  work_date = ?;";
 				pStmt = conn.prepareStatement(sql);
@@ -114,6 +116,8 @@ public class AttendanceDataDAO {
 			
 			if(!rs.next()) {
 				return false;
+			}else if(rs.getString(5) != null) {
+				return false;
 			} else {
 				sql = "UPDATE attendance SET start_break = ? WHERE enumber = ? and work_date = ?;";
 				pStmt = conn.prepareStatement(sql);
@@ -152,7 +156,9 @@ public class AttendanceDataDAO {
 			pStmt.setString(2, now.format(dFormat));
 			ResultSet rs = pStmt.executeQuery();
 			
-			if(!rs.next() && rs.getString(5) == null) {
+			if(!rs.next()) {
+				return false;
+			}else if(rs.getString(5) == null) {
 				return false;
 			} else {
 				sql = "UPDATE attendance SET finish_break = ? WHERE enumber = ? and  work_date = ?;";
