@@ -23,6 +23,10 @@
    	<servlet-name>CheckAttServlet</servlet-name>
    	<servlet-class>servlet.CheckAttServlet</servlet-class>
    </servlet>
+   <servlet>
+   	<servlet-name>MonthlyServlet</servlet-name>
+   	<servlet-class>servlet.MonthlyServlet</servlet-class>
+   </servlet>
    
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -58,6 +62,14 @@
   <servlet-mapping>
   	<servlet-name>CheckAttServlet</servlet-name>
   	<url-pattern>/timecard-app/CheckAttServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MonthlyServlet</servlet-name>
+  	<url-pattern>/MonthlyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MonthlyServlet</servlet-name>
+  	<url-pattern>/timecard-app/MonthlyServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

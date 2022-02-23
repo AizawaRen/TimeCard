@@ -20,33 +20,35 @@ public class CheckAttServlet extends HttpServlet {
 		Employee emp = (Employee) session.getAttribute("employee");
 		if(emp == null) {
 			response.sendRedirect("/timecard-app/LogoutServlet");
-		}
+		}else {
+			
 		
-		String enumber = emp.getNumber();
-		int yph = emp.getYph();
-		CheckAttDAO cad = new CheckAttDAO();
-			Double totalTime = cad.checkTotalTime(enumber);
-			session.setAttribute("time", totalTime);
-			
-			Double totalPay = totalTime * yph / 60;
-			session.setAttribute("pay", totalPay);
-			
-			String ckStart = cad.checkStart(enumber);
-			session.setAttribute("start", ckStart);
-
-			String ckFinish = cad.checkFinish(enumber);
-			session.setAttribute("finish", ckFinish);
-			
-			String ckStartBreak = cad.checkStartBreak(enumber);
-			session.setAttribute("startBreak", ckStartBreak);
-
-			String ckFinishBreak = cad.checkFinishBreak(enumber);
-			session.setAttribute("finishBreak", ckFinishBreak);
-
+			String enumber = emp.getNumber();
+			int yph = emp.getYph();
+			CheckAttDAO cad = new CheckAttDAO();
+				Double totalTime = cad.checkTotalTime(enumber);
+				session.setAttribute("time", totalTime);
 				
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
-		dispatcher.forward(request, response);
+				Double totalPay = totalTime * yph / 60;
+				session.setAttribute("pay", totalPay);
+				
+				String ckStart = cad.checkStart(enumber);
+				session.setAttribute("start", ckStart);
+	
+				String ckFinish = cad.checkFinish(enumber);
+				session.setAttribute("finish", ckFinish);
+				
+				String ckStartBreak = cad.checkStartBreak(enumber);
+				session.setAttribute("startBreak", ckStartBreak);
+	
+				String ckFinishBreak = cad.checkFinishBreak(enumber);
+				session.setAttribute("finishBreak", ckFinishBreak);
+	
+					
+	
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
+			dispatcher.forward(request, response);
+		}
 		
 	}
 	
@@ -58,34 +60,37 @@ public class CheckAttServlet extends HttpServlet {
 		Employee emp = (Employee) session.getAttribute("employee");
 		if(emp == null) {
 			response.sendRedirect("/timecard-app/LogoutServlet");
+		}else {
+			
+		
+			String enumber = emp.getNumber();
+			int yph = emp.getYph();
+			CheckAttDAO cad = new CheckAttDAO();
+			
+			Double totalTime = cad.checkTotalTime(enumber);
+			session.setAttribute("time", totalTime);
+			
+			Double totalPay = totalTime * yph / 60;
+			session.setAttribute("pay", totalPay);
+			
+			String ckStart = cad.checkStart(enumber);
+			session.setAttribute("start", ckStart);
+	
+			String ckFinish = cad.checkFinish(enumber);
+			session.setAttribute("finish", ckFinish);
+			
+			String ckStartBreak = cad.checkStartBreak(enumber);
+			session.setAttribute("startBreak", ckStartBreak);
+	
+			String ckFinishBreak = cad.checkFinishBreak(enumber);
+			session.setAttribute("finishBreak", ckFinishBreak);
+	
+					
+	
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
+			dispatcher.forward(request, response);
+			
 		}
-		
-		String enumber = emp.getNumber();
-		int yph = emp.getYph();
-		CheckAttDAO cad = new CheckAttDAO();
-		
-		Double totalTime = cad.checkTotalTime(enumber);
-		session.setAttribute("time", totalTime);
-		
-		Double totalPay = totalTime * yph / 60;
-		session.setAttribute("pay", totalPay);
-		
-		String ckStart = cad.checkStart(enumber);
-		session.setAttribute("start", ckStart);
-
-		String ckFinish = cad.checkFinish(enumber);
-		session.setAttribute("finish", ckFinish);
-		
-		String ckStartBreak = cad.checkStartBreak(enumber);
-		session.setAttribute("startBreak", ckStartBreak);
-
-		String ckFinishBreak = cad.checkFinishBreak(enumber);
-		session.setAttribute("finishBreak", ckFinishBreak);
-
-				
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/attendanceMain.jsp");
-		dispatcher.forward(request, response);
 
 		
 	 }
