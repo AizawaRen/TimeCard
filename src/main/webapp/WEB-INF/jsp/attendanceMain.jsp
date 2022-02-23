@@ -23,7 +23,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/styles.css">
 		<script type="text/javascript" src="<%= request.getContextPath() %>/js/main.js"></script>
-		<title>出退勤システム</title>
+		<title>TimeCard</title>
 	</head>
 	<body class="at">
 		<div class="left">
