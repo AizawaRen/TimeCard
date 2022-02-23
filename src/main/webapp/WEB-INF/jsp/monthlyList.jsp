@@ -61,19 +61,25 @@
 					if(Integer.parseInt(workDate) == i) {
 			%>
 						<td><% if(atd.getStartTime() != null) { %>
-						<%= atd.getStartTime().format(tFormat) %><% } %></td>
+							<%= atd.getStartTime().format(tFormat) %><% } %>
+						</td>
 						<td><% if(atd.getFinishTime() != null) { %>
-						<%= atd.getFinishTime().format(tFormat) %><% } %></td>
+							<%= atd.getFinishTime().format(tFormat) %><% } %>
+						</td>
 						<td><% if(atd.getStartBreakTime() != null) { %>
-						<%= atd.getStartBreakTime().format(tFormat) %><% } %></td>
+							<%= atd.getStartBreakTime().format(tFormat) %><% } %>
+						</td>
 						<td><% if(atd.getFinishBreakTime() != null) { %>
-						<%= atd.getFinishBreakTime().format(tFormat) %><% } %></td>
+							<%= atd.getFinishBreakTime().format(tFormat) %><% } %>
+						</td>
 						<td><% if(atd.getBreakTime() != null) {%>
-						<%= tFormat.format(LocalTime.MIDNIGHT.plus(atd.getBreakTime())) %>
-						<% } %></td>
+							<%= tFormat.format(LocalTime.MIDNIGHT.plus(atd.getBreakTime())) %>
+							<% } %>
+						</td>
 						<td><% if(atd.getWorkingHours() != null) { %>
-						<%= tFormat.format(LocalTime.MIDNIGHT.plus(atd.getWorkingHours())) %>
-						<% } %></td>
+							<%= tFormat.format(LocalTime.MIDNIGHT.plus(atd.getWorkingHours())) %>
+							<% } %>
+						</td>
 			<%
 						chk = true;
 						break;
