@@ -27,7 +27,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/monthly.css">
-<title>Insert title here</title>
+<title>Monthly</title>
 </head>
 <body>
 
