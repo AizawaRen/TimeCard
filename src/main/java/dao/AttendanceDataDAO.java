@@ -24,6 +24,7 @@ public class AttendanceDataDAO {
 	
 	public void dbConnect() throws SQLException {
 		ConnectDB cdb = new ConnectDB();
+		
 		conn = cdb.connect();
 	}
 	

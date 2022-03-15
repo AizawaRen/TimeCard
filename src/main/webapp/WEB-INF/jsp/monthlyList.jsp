@@ -19,6 +19,7 @@
 	String enumber = emp.getNumber();
 	String name = emp.getName();
 	Calendar calendar = Calendar.getInstance();
+	List<AttendanceData> ThisMonthList =(List<AttendanceData>) session.getAttribute("thisMonth");
 		
 	
 %>
@@ -45,13 +46,13 @@
 		</tr>
 
 		<%	
-			List<AttendanceData> ThisMonthList =(List<AttendanceData>) session.getAttribute("thisMonth");
+			
 			int dom = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 			DateTimeFormatter tFormat = DateTimeFormatter.ofPattern("HH:mm");
 			
 			for(int i = 1; i <= dom; i++) {
 				Boolean chk = false;
-				%>
+		%>
 				<tr>
 				<td><%= (calendar.get(Calendar.MONTH) + 1) + "/" + i  %></td>
 
